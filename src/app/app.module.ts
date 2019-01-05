@@ -12,7 +12,6 @@ import {
   MatIconModule,
   MatSidenavModule, MatListModule
 } from "@angular/material";
-import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatSelectModule,
     FormsModule,
     MatToolbarModule,
-    FlexLayoutModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule
