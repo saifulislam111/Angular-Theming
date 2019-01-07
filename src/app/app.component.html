@@ -1,46 +1,62 @@
+<mat-toolbar class="bg-toolbar" fxLayout="row">
+  <div fxFlex="50" fxLayout="row" fxLayoutAlign="start center">
+    <mat-icon (click)="sidenav.toggle()" class="cursor-pointer mr-15">menu</mat-icon>
+    <h1 class="example-app-name p-0 m-0">Angular Material Theming</h1>
+  </div>
+  <div fxFlex="50" fxLayout="row" fxLayoutAlign="end center" class="mr-30">
+    <mat-icon class="cursor-pointer" [matMenuTriggerFor]="menu">more_vert</mat-icon>
+  </div>
+  <mat-menu #menu="matMenu" class="profile-menu" [overlapTrigger]="false">
+    <button mat-menu-item (click)="changeTheme('my-theme')">
+      <span>My Theme (Light)</span>
+    </button>
+    <button mat-menu-item (click)="changeTheme('my-second-theme')">
+      <span>My Second Theme (Dark)</span>
+    </button>
+  </mat-menu>
 
-<div [class]="theme">
+</mat-toolbar>
 
 
-  <mat-sidenav-container class="example-sidenav-container">
-    <mat-sidenav #sidenav opened="true" [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-      <mat-nav-list color="accent">
-        <a mat-list-item>Item 1</a>
-        <a mat-list-item>Item 2</a>
-        <a mat-list-item>Item 3</a>
-        <a mat-list-item>Item 4</a>
-        <a mat-list-item>Item 5</a>
-      </mat-nav-list>
-    </mat-sidenav>
+<mat-sidenav-container class="example-sidenav-container">
+  <mat-sidenav #sidenav opened="true" [mode]="mobileQuery.matches ? 'over' : 'side'"
+               [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    <mat-nav-list class="height-100-p example-sidenav">
+      <a mat-list-item>Item 1</a>
+      <a mat-list-item>Item 2</a>
+      <a mat-list-item>Item 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
 
-    <mat-sidenav-content>
+  <mat-sidenav-content>
 
-      <mat-toolbar color="warn">
-          <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-          <h1 class="example-app-name">Angular Material Theming</h1>
-        <div >
-          <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <div [class]="theme">
+      <div class="p-20">
+        <h1>
+          Welcome to My App!
+        </h1>
+
+        <div fxLayout.gt-sm="row wrap" fxLayoutGap.gt-sm="30px" fxLayout="column">
+          <mat-card class="width-300-px">
+            Card 1
+          </mat-card>
+          <mat-card class="width-300-px">
+            Card 2
+          </mat-card>
+          <mat-card class="width-300-px">
+            Card 3
+          </mat-card>
+          <mat-card class="width-300-px">
+            Card 4
+          </mat-card>
         </div>
-      </mat-toolbar>
 
-      <h1>
-        Welcome to {{ title }}!
-      </h1>
-
-      <mat-card class="mb-20">
-        <button mat-raised-button color="primary">Primary</button>
-        <button mat-raised-button color="accent">Accent</button>
-        <button mat-raised-button color="warn">Warn</button>
-      </mat-card>
-
-      <mat-card class="mb-20">
-        <mat-select placeholder="Themes" [(ngModel)]="theme" (change)="onThemeChange()">
-          <mat-option value="my-theme">My Theme (Light)</mat-option>
-          <mat-option value="my-second-theme">My Second Theme (Dark)</mat-option>
-        </mat-select>
-      </mat-card>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-
-</div>
+        <mat-card class="mt-40" fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="center center">
+          <button mat-raised-button color="primary">Primary</button>
+          <button mat-raised-button color="accent">Accent</button>
+          <button mat-raised-button color="warn">Warn</button>
+        </mat-card>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

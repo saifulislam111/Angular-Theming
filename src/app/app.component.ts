@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { OverlayContainer } from "@angular/cdk/overlay";
+// import { OverlayContainer } from "@angular/cdk/overlay";
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 
@@ -10,14 +10,13 @@ import {ChangeDetectorRef, OnDestroy} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'amte';
   theme = 'my-theme';
 
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
 
   constructor(
-    private overlayContainer: OverlayContainer,
+    // private overlayContainer: OverlayContainer,
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher
   ) {
@@ -27,11 +26,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.overlayContainer.getContainerElement().classList.add(this.theme);
+    // this.overlayContainer.getContainerElement().classList.add(this.theme);
   }
 
-  onThemeChange() {
-    this.overlayContainer.getContainerElement().classList.add(this.theme);
+  changeTheme(theme) {
+    this.theme = theme;
   }
 
 

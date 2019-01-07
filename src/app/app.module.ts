@@ -10,8 +10,9 @@ import {
   MatSelectModule,
   MatToolbarModule,
   MatIconModule,
-  MatSidenavModule, MatListModule
-} from "@angular/material";
+  MatSidenavModule, MatListModule, MatMenuModule
+} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import {
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
